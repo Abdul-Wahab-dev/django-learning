@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% load static %} {% block title %}{{block.super}}
+Course {% endblock %} {% block content %}
+<h1>Course 1 {{name}}</h1>
+<button onclick="showAlert()">Click me</button>
+<img src="{% static 'images/tree.jpg' %}" />
+<img src="{% get_static_prefix %}images/tree.jpg" />
+<img src="{% get_static_prefix %}images/tree.jpg" />
+<img src="{% get_static_prefix %}images/tree.jpg" />
+
+<script src="{% static 'js/all.js'%}"></script>
+{% endblock %}
