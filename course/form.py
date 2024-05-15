@@ -16,6 +16,7 @@ class CourseRegistration(forms.ModelForm):
     class Meta:
         model = Course
         fields = ['name', 'description']
+        # fields = '__all__'
         labels = {"name":"Enter name", "description":"Enter Description"}
         
         

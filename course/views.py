@@ -30,3 +30,9 @@ def test(request):
 
 def success(request):
     return render(request, 'success.html')
+
+def showCourse(request , my_id , **check):
+    print(my_id)
+    print(check)
+    
+    return render(request, 'course1.html' , context={"name":my_id})
