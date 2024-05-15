@@ -6,6 +6,10 @@ Course {% endblock %} {% block content %}
 <img src="{% get_static_prefix %}images/tree.jpg" />
 <img src="{% get_static_prefix %}images/tree.jpg" />
 <img src="{% get_static_prefix %}images/tree.jpg" />
-
+{% if data %}
+<h1>show data</h1>
+{% for course in data %} {{course.id}} {{course.name}} {% endfor %} {% else %}
+<h1>No data</h1>
+{% endif %}
 <script src="{% static 'js/all.js'%}"></script>
 {% endblock %}
