@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
-from course.models import Course
 from .form import CourseRegistration
-from .models import Course
+from django.contrib import messages
 # Create your views here.
 
 
@@ -14,9 +13,12 @@ def index(request):
             print(form.cleaned_data)
             name = form.cleaned_data["name"]
             desc = form.cleaned_data['description']
-            form.save(name=name , description=desc)
+            print(name , desc)
+            form.save(True)
+            # form.save(name=name , description=desc)
             # reg = Course(id=1,name=name,description=desc)
             # reg.save()
+            messages.add_message(request,messages.SUCCESS,"you have sucessfully registered!")
             # return HttpResponseRedirect('/course/success')
         print("coming from POST request")
     else:

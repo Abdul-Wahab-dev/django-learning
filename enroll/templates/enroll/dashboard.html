@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <h1>Dashboard Page</h1>
+    <h2>Welcome {{name}}</h2>
+    {{perms.course.delete_course}}
+    {% if perms.course.delete_course %}
+    <input type="button" value="Add" /> <br><br>
+    <input type="button" value="Change" /> <br><br>
+    <input type="button" value="Delete" /> <br><br>
+    <input type="button" value="View" /> <br><br>
+    {% else %}
+    <h2>No permissions</h2>
+    {% endif %}
+    <a href="{% url 'logout' %}">logout</a>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<!DOCTYPE html>
+    <html lang=" en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User login</title>
+    </head>
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="submit" />
+    </form>
+    <div>
+        <a href="{% url 'signup' %}">Singup</a>
+    </div>
+    <div>
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+
+</html>, initial-scale=1.0">
+<title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
