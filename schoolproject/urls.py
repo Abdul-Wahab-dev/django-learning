@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from enroll import views
- 
+from counter import views
+from school import views as school_views
+    
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('course/', include('course.urls') ),
     path("fees/",  include('fees.urls') ),
-    path('enroll/', include('enroll.urls'))
+    path('enroll/', include('enroll.urls')),
+    path('counter/', include('counter.urls')),
+    path('school/' ,  school_views.students )
 ]

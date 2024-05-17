@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from .form import CourseRegistration
 from django.contrib import messages
+from django.views.decorators.cache import cache_page
 # Create your views here.
 
 
@@ -33,6 +34,7 @@ def test(request):
 def success(request):
     return render(request, 'success.html')
 
+@cache_page(60)
 def showCourse(request , my_id , **check):
     print(my_id)
     print(check)
