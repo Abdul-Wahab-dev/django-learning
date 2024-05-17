@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Student, Teacher , Contractor , ExamCenter , MyExamCenterProxy , Pages
+from .models import Student, Teacher , Contractor , ExamCenter , MyExamCenterProxy , Pages, Posts , Song
 
 
 
@@ -30,3 +30,12 @@ class ExamCenterProxyAdmin(admin.ModelAdmin):
 @admin.register(Pages)
 class PagesAdmin(admin.ModelAdmin):
     list_display = ['page_name','page_cat','publish','student']    
+    
+@admin.register(Posts)
+class PostsAdmin(admin.ModelAdmin):
+    list_display = ['title' , 'category','publish' , 'student']    
+
+
+@admin.register(Song)
+class PostsAdmin(admin.ModelAdmin):
+    list_display = ['name','duration' , 'written_by']        

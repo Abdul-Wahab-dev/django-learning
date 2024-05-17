@@ -34,7 +34,20 @@ class Pages(models.Model):
         page_cat = models.CharField(max_length=70)
         publish = models.DateField()
         
-        
+   
+   
+class Posts(models.Model):
+    student = models.ForeignKey(Student,on_delete=models.CASCADE)
+    title = models.CharField(max_length=70)
+    category = models.CharField(max_length=70)
+    publish = models.DateField()
+
+class Song(models.Model):
+    student = models.ManyToManyField(Student)
+    name = models.CharField(max_length=70)
+    duration = models.IntegerField()            
+    def written_by(self):
+        return ','.join([str(p) for p in self.student.all()])
 class Teacher(CommonInfo):
     salary = models.IntegerField()
     
